@@ -1,0 +1,36 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++17",
+                "-o",
+                "${workspaceFolder}/BasicOfCplusPluss/output",
+                "${workspaceFolder}/BasicOfCplusPluss/Function.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "compile and run",
+            "type": "shell",
+            "command": "/usr/bin/bash",
+            "args": [
+                "-c",
+                "/usr/bin/g++ -std=c++17 -o ${workspaceFolder}/BasicOfCplusPluss/output ${workspaceFolder}/BasicOfCplusPluss/Function.cpp && ${workspaceFolder}/BasicOfCplusPluss/output < ${workspaceFolder}/BasicOfCplusPluss/input.txt > ${workspaceFolder}/BasicOfCplusPluss/output.txt"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
